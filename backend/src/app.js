@@ -2,6 +2,7 @@ import express from 'express'
 import { postsRoutes } from './routes/posts.js'
 import { userRoutes } from './routes/users.js'
 import bodyParser from 'body-parser'
+import { eventRoutes } from './routes/events.js'
 import cors from 'cors'
 
 const app = express()
@@ -12,6 +13,7 @@ app.use(cors())
 
 postsRoutes(app)
 userRoutes(app)
+eventRoutes(app)
 
 app.get('/', (req, res) => {
   res.send('Hello from Express Nodemon!')
